@@ -140,7 +140,7 @@ const MyFooter = () => (
         </div>
       </div>
       <div className="pt-3">
-        <a className=" btn button-gn service-code  mb-2 ">
+        <a className=" btn service-code  mb-2 ">
           <span className="d-inline-block svg text-muted ">Service code</span>
         </a>
         <div className="d-flex justify-content-between  svg ">
