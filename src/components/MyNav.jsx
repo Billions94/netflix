@@ -1,4 +1,5 @@
 import { Form } from "react-bootstrap"
+import {Link, withRouter} from 'react-router-dom'
 
 
 
@@ -21,14 +22,14 @@ const MyNav = () => (
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul className="navbar-nav mr-auto">
                 <li className="nav-item">
-                    <a className="nav-link active" href=" hh">
+                    <Link to={'/home'} className="nav-link active">
                     Home <span className="sr-only">(current)</span>
-                    </a>
+                    </Link>
                 </li>
                 <li className="nav-item">
-                    <a className="nav-link" href="hvh">
+                    <Link to={'/tvshows'} className="nav-link">
                     TV Shows
-                    </a>
+                    </Link>
                 </li>
                 <li className="nav-item">
                     <a className="nav-link" href="hvh">
@@ -95,4 +96,4 @@ const MyNav = () => (
         </nav>
 )
 
-export default MyNav
+export default withRouter(MyNav)

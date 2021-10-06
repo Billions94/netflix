@@ -16,16 +16,16 @@ const Header = () => (
           <span className="d-inline-block  genreSpan mr-3">Genres</span>
         </div>
         <div
-          className="dropdown-menu background"
+          className="dropdown-menu "
           aria-labelledby="dropdownGenre"
         >
-          <a className="dropdown-item background" href="#">
+          <a className="dropdown-item backgound" href="#">
             Romance
           </a>
-          <a className="dropdown-item background" href="#">
+          <a className="dropdown-item " href="#">
             Comedy
           </a>
-          <a className="dropdown-item background" href="#">
+          <a className="dropdown-item " href="#">
             Fantasy
           </a>
         </div>

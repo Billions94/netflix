@@ -607,3 +607,12 @@ bottom: 0;
   margin-left: 100px;
   color: grey;
 }
+
+
+/*--------------------------------------Home CSS--------------------------------*/
+.video {
+  /* pointer-events:  */
+  width: 100%;
+  object-fit: fill;
+  padding:0;
+}
