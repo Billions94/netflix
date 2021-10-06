@@ -365,7 +365,7 @@ box-shadow: 0px 10px 13px -7px #525252, 0px 3px 17px 5px rgba(82, 82, 82, 0.52);
 
 
 .infos-content .play-btn:not(:hover) {
-  background: black;
+  background: white;
 }
 
  .infos-content .play-btn {
@@ -379,7 +379,7 @@ box-shadow: 0px 10px 13px -7px #525252, 0px 3px 17px 5px rgba(82, 82, 82, 0.52);
 } 
 
  .infos-content .play-btn:hover {
-  border: none;
+  background-color: rgb(223, 223, 223);
   animation: gradientSlide 4s ease infinite;
 }
 
@@ -395,7 +395,7 @@ box-shadow: 0px 10px 13px -7px #525252, 0px 3px 17px 5px rgba(82, 82, 82, 0.52);
   margin: auto;
   border-style: solid;
   border-width: 7px 0 7px 10px;
-  border-color: transparent transparent transparent white;
+  border-color: transparent transparent transparent black
 } 
 
 .circul-btn{
@@ -403,15 +403,16 @@ box-shadow: 0px 10px 13px -7px #525252, 0px 3px 17px 5px rgba(82, 82, 82, 0.52);
   border-radius: 50%;
   width: 30px;
   height: 30px;
-  cursor: pointer;
+  cursor: pointer; 
 }
 
 .infos-content .circul-btn:not(:hover) {
   background: black;
+  border-color:rgb(139, 139, 139)
 }
 
 .infos-content .circul-btn:hover {
-  border: none;
+
   animation: gradientSlide 4s ease infinite;
 } 
 
@@ -422,8 +423,8 @@ box-shadow: 0px 10px 13px -7px #525252, 0px 3px 17px 5px rgba(82, 82, 82, 0.52);
 
 .infos-content .plus-btn {
   position: relative;
-  width: 10px;
-  height: 10px;
+  width: 11px;
+  height: 11px;
   cursor: pointer;
 }
 
