@@ -6,28 +6,28 @@ import TvShows from './components/TvShows';
 import React from 'react';
 import Home from './components/Home';
 import { BrowserRouter as Router, Route } from 'react-router-dom'
+import {useState, useEffect} from 'react'
 
-class App extends React.Component {
+const App = () => {
 
-  state = {
-    query: ''
-  }
+  const [query, setQuery] = useState('')
 
-  render() {
+  
   return (
     <div className="App">
       <div className="app-container">
         <Router>
-        <MyNav />
-        <Route path={'/tvshows'} exact render={(routerProps)=> <TvShows {...routerProps} query={'spider-man'}/>}/>
-        <Route path={'/tvshows'} exact render={(routerProps)=> <TvShows {...routerProps} query={'batman'}/>}/>
+        <MyNav query={query} setQuery={setQuery} />
+        <Header />
+        <Route path={'/tvshows'} exact render={(routerProps)=> <TvShows {...routerProps} query={query} dQuery={'spider-man'}/>}/>
+        <Route path={'/tvshows'} exact render={(routerProps)=> <TvShows {...routerProps} query={query} dQuery={'batman'}/>}/>
         <Route path={'/home'} exact component={Home} />
         <MyFooter />
         </Router>
       </div>
     </div>
   );
-  }
+  
 }
 
 export default App;

@@ -41,7 +41,7 @@ const Home = () => {
         )}
       </div>
 
-      <TvShows query={"horror"} />
+      <TvShows dQuery={"horror"} />
     </>
   );
 };

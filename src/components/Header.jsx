@@ -1,5 +1,9 @@
-const Header = () => (
-  <div className="container-fluid overflow-hidden p-0 pt-3">
+import { withRouter } from "react-router";
+
+const Header = ({location}) => {
+  return (
+    location.pathname !== '/home' && (
+      <div className="container-fluid overflow-hidden p-0 pt-3">
     {/*--genres*/}
     <div className="row header sticky-top">
       <h2 className="tv-shows pr-5">TV Shows</h2>
@@ -44,6 +48,8 @@ const Header = () => (
       </div>
     </div>
   </div>
-);
+    )
+  )
+}
 
-export default Header;
+export default withRouter(Header);

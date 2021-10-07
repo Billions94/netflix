@@ -1,9 +1,10 @@
 import { Form } from "react-bootstrap"
 import {Link, withRouter} from 'react-router-dom'
+import Search from "./Search"
 
 
 
-const MyNav = () => (   
+const MyNav = ({setQuery}) => (   
         <nav className="navbar navbar-expand-lg navbar-dark bg-black">
             <a className="navbar-brand" href="home.html">
                 <img src="./assets/Netflix_Logo_CMYK.png" alt="" width="95px" />
@@ -53,7 +54,7 @@ const MyNav = () => (
                 </li>
                 </ul>
                 <form className="form-inline my-2 my-lg-0">
-                    <Form.Control type="search" placeholder="Titles,people,genres" className="navSearch mr-1"/>
+                    <Search  setQuery={setQuery}/>
                 <div className="btn-group dropdown">
                     <img className="logo" src="./assets/search.png"  alt="" />
                     <a
