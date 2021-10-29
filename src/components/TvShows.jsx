@@ -17,7 +17,7 @@ const TvShows = ({ query, dQuery }) => {
   const searchMovies = async () => {
     try {
       if (query.length > 3) {
-        const response = await fetch(`${url}/&s/=${query}`);
+        const response = await fetch(`${url}/media/=${query}`);
         const data = await response.json();
         if (response.ok) {
           console.log(`initial data`, data);
@@ -34,7 +34,7 @@ const TvShows = ({ query, dQuery }) => {
 
   const  fetchMovie = async () => {
     try {
-      const response = await fetch(url)
+      const response = await fetch(url + "/media")
       const data = await response.json();
       console.log(`data before console log`,data)
       if (response.ok) {
