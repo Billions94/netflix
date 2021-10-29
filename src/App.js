@@ -19,8 +19,8 @@ const App = () => {
         <Router>
         <MyNav query={query} setQuery={setQuery} />
         <Header />
-        <Route path={'/tvshows'} exact render={(routerProps)=> <TvShows {...routerProps} query={query} dQuery={'spider-man'}/>}/>
-        <Route path={'/tvshows'} exact render={(routerProps)=> <TvShows {...routerProps} query={query} dQuery={'lord of the rings'}/>}/>
+        <Route path={'/tvshows'} exact render={(routerProps)=> <TvShows {...routerProps} query={query} dQuery={'row'}/>}/>
+        <Route path={'/tvshows'} exact render={(routerProps)=> <TvShows {...routerProps} query={query} dQuery={'row'}/>}/>
         <Route path={'/home'} exact component={Home} />
         <MyFooter />
         </Router>
