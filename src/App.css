@@ -302,8 +302,8 @@ h4:hover .xplore {
 .card {
   padding:0;
   border: none;
-  width: 240px;
-  height: 135px;
+  /* width: 240px;
+  height: 135px; */
   overflow: hidden;
 }
 

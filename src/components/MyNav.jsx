@@ -54,7 +54,7 @@ const MyNav = ({setQuery}) => (
                 </li>
                 </ul>
                 <form className="form-inline my-2 my-lg-0">
-                    <Search  setQuery={setQuery}/>
+                    <Search setQuery={setQuery}/>
                 <div className="btn-group dropdown">
                     <img className="logo" src="./assets/search.png"  alt="" />
                     <a

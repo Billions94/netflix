@@ -2,26 +2,27 @@ import React from "react";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Header from "./Header";
+import { useState, useEffect } from "react"
 
-class TvShows extends React.Component {
-  state = {
-    movies: [],
-    searchedMovies: []
-  };
+const TvShows = ({ query, dQuery }) => {
 
-  searchMovies = async () => {
+  const [movies, setMovies] = useState([])
+  const [searchedMovies, setSearchedMovies] = useState([])
+
+  const url = process.env.REACT_APP_GET_URL 
+ 
+
+  
+
+  const searchMovies = async () => {
     try {
-      if (this.props.query.length > 3) {
-        const response = await fetch(
-          `http://www.omdbapi.com/?i=tt3896198&apikey=1dcfbf0b&s=${this.props.query}`
-        );
+      if (query.length > 3) {
+        const response = await fetch(`${url}/&s=/${query}`);
         const data = await response.json();
         if (response.ok) {
           console.log(`initial data`, data);
-          this.setState({
-            searchedMovies: data.Search,
-          });
-          console.log(`here is your data `, this.state.movies);
+          setSearchedMovies(data);
+          console.log(`here is your data `, movies);
         } else {
           console.log(`something went wrong`);
         }
@@ -31,18 +32,15 @@ class TvShows extends React.Component {
     }
   };
 
-  fetchMovie = async () => {
+  const  fetchMovie = async () => {
     try {
-      const response = await fetch(
-        `http://www.omdbapi.com/?i=tt3896198&apikey=1dcfbf0b&s=${this.props.dQuery}`
-      );
+      const response = await fetch(url)
       const data = await response.json();
+      console.log(`data before console log`,data)
       if (response.ok) {
         console.log(`initial data`, data);
-        this.setState({
-          movies: data.Search,
-        });
-        console.log(`here is your data `, this.state.movies);
+         setMovies(data);
+        console.log(`here is your data `, movies);
       } else {
         console.log(`something went wrong`);
       }
@@ -51,38 +49,37 @@ class TvShows extends React.Component {
     }
   };
 
-  componentDidMount() {
-    this.fetchMovie();
-  }
 
-  componentDidUpdate = (prevProps) => {
-    if (prevProps !== this.props.query) {
-      this.searchMovies();
-    }
-  };
+  useEffect(() => {
+    fetchMovie()
+  }, [])
 
-  render() {
+  useEffect(() => {
+    searchMovies()
+  }, [dQuery])
 
+
+ 
     // if(true) {
     //   return (<div/>)
     // } else {}
-
+console.log(`here is data`,movies)
     return (
       <>
         <div className="d-flex justify-content-start mt-3">
-          <h3>{this.props.dQuery}</h3>
+          <h3>{dQuery}</h3>
         </div>
         <div className="d-flex justify-content-start">
           <Row className="row-flex">
             {
-            !this.state.searchedMovies ? (<div class="spinner-border text-danger" role="status">
+            !searchedMovies ? (<div class="spinner-border text-danger" role="status">
                                     <span class="sr-only">Loading...</span>
                                   </div>) 
               : 
-              (this.state.movies.map((movie) => (
-                <Col className="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-2 px-1 py-3">
+              (movies.map((movie) => (
+                <Col className="col-12 col-sm-6 col-md-4 col-lg-2 col-xl-2 px-1 py-3">
                   <div
-                    Key={movie.imdbID}
+                    Key={movie.id}
                     className="card-gallery position-relative"
                   >
                     <img
@@ -154,6 +151,7 @@ class TvShows extends React.Component {
                       </div>
                     </div>
                   </div>
+                  <a className='text-muted' href={url + `/${movie.id}` + `/downloadPDF`}>download movie pdf</a>
                 </Col>
               ))
             )}
@@ -161,7 +159,7 @@ class TvShows extends React.Component {
         </div>
       </>
     )
-  }
+  
 }
 
 export default TvShows;
