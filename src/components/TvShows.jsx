@@ -34,7 +34,7 @@ const TvShows = ({ query, dQuery }) => {
 
   const  fetchMovie = async () => {
     try {
-      const response = await fetch(url + "/media")
+      const response = await fetch(url)
       const data = await response.json();
       console.log(`data before console log`,data)
       if (response.ok) {
@@ -119,7 +119,7 @@ console.log(`here is data`,movies)
                             </svg>
                           </div>
                         </div>
-                        <p class="nextflix-title season">Product of Nextflix</p>
+                        <p class="nextflix-title text-muted season">Product of Nextflix</p>
                         <p>
                           <small>{movie.Title}</small>
                         </p>

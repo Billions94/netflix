@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import TvShows from "./TvShows";
 
 const Home = () => {
-  const apiKey = "563492ad6f9170000100000120628be3036d41feb0b2936d48c5d3a4";
+  const apiKey = process.env.REACT_APP_API_KEY
 
   const [videos, setVideos] = useState(null);
   const index = Math.floor(Math.random() *15)
